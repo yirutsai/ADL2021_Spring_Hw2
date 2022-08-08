@@ -1,0 +1,15 @@
+python slot.py \
+    --model_name_or_path bert-base-cased \
+    --num_train_epochs 10 \
+    --output_dir bert-base-cased1 \
+    --train_file ../preprocess/slot/train.json \
+    --validation_file ../preprocess/slot/eval.json \
+    --do_train \
+    --do_eval \
+    --per_device_train_batch_size=8 \
+    --per_device_eval_batch_size=8 \
+    --gradient_accumulation_steps 8 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --evaluation_strategy steps \
+    --overwrite_output_dir \

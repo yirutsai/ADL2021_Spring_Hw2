@@ -1,0 +1,20 @@
+python run_qa.py \
+  --model_name_or_path hfl/chinese-macbert-large \
+  --train_file ../preprocess/train.json \
+  --validation_file ../preprocess/valid.json \
+  --context_file ${1} \
+  --do_train \
+  --do_eval \
+  --per_device_train_batch_size 2 \
+  --gradient_accumulation_steps 8 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3 \
+  --max_seq_length 384 \
+  --doc_stride 120 \
+  --output_dir ./hfl/chinese-macbert-large2 \
+  --warmup_ratio 0.25 \
+  --eval_steps 80 \
+  --save_steps 80 \
+  --evaluation_strategy steps \
+  --load_best_model_at_end True  \
+  --overwrite_output_dir \
